@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition Énergétique - Agissons Ensemble</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fffe;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5f2d, #97bc62);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo h2 {
+            color: white;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #97bc62;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2c5f2d, #97bc62);
+            padding: 100px 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            min-height: 70vh;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #97bc62;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background: #97bc62;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #7da050;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #97bc62;
+        }
+
+        .cta-button.secondary:hover {
+            background: #97bc62;
+            color: white;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .energy-icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon {
+            font-size: 4rem;
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .importance {
+            background: white;
+        }
+
+        .importance h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5f2d;
+        }
+
+        .importance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .importance-card {
+            background: #f8fffe;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0f0e0;
+        }
+
+        .importance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(44, 95, 45, 0.1);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .importance-card h3 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .solutions {
+            background: linear-gradient(135deg, #f8fffe, #e8f5e8);
+        }
+
+        .solutions h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5f2d;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .solution-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .solar-bg {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+        }
+
+        .wind-bg {
+            background: linear-gradient(45deg, #87ceeb, #4682b4);
+        }
+
+        .efficiency-bg {
+            background: linear-gradient(45deg, #98fb98, #32cd32);
+        }
+
+        .solution-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-content h3 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .solution-content p {
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .solution-content ul {
+            list-style: none;
+            margin-top: auto;
+        }
+
+        .solution-content li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .solution-content li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #97bc62;
+            font-weight: bold;
+        }
+
+        .actions {
+            background: white;
+        }
+
+        .actions h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5f2d;
+        }
+
+        .actions-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #666;
+        }
+
+        .actions-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .action-category {
+            background: #f8fffe;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #e0f0e0;
+        }
+
+        .action-category h3 {
+            color: #2c5f2d;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .action-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .action-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #97bc62;
+        }
+
+        .action-item label {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .action-item input[type="checkbox"]:checked + label {
+            color: #2c5f2d;
+            font-weight: 500;
+        }
+
+        .action-item label a {
+            color: inherit;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .action-item label a:hover {
+            color: #2c5f2d;
+        }
+
+        .action-item input[type="checkbox"]:checked + label a {
+            color: white;
+        }
+
+        .action-item input[type="checkbox"]:checked + label a:hover {
+            color: #f0f8f0;
+        }
+
+        .impact-calculator {
+            background: linear-gradient(135deg, #2c5f2d, #97bc62);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .impact-calculator h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .impact-disclaimer {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .impact-disclaimer a {
+            color: white;
+            font-weight: bold;
+        }
+
+        .impact-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+        }
+
+        .impact-item {
+            text-align: center;
+        }
+
+        .impact-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #97bc62;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: #2c5f2d;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background: #2c5f2d;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #97bc62;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #97bc62;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a6b4a;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .importance-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .energy-icons {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            
+            .icon {
+                font-size: 2.5rem;
+            }
+
+            nav button {
+                display: block !important;
+            }
+            
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: linear-gradient(135deg, #2c5f2d, #97bc62);
+                flex-direction: column;
+                padding: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s ease;
+            }
+            
+            nav ul.mobile-active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .quiz {
+            background: linear-gradient(135deg, #f8fffe, #e8f5e8);
+        }
+
+        .quiz h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5f2d;
+        }
+
+        .quiz-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: #666;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .quiz-progress {
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0f0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #97bc62, #2c5f2d);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+            width: 20%;
+        }
+
+        .progress-text {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            color: #2c5f2d;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
+        .answers {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .answer-option {
+            background: #f8fffe;
+            border: 2px solid #e0f0e0;
+            border-radius: 10px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .answer-option:hover {
+            border-color: #97bc62;
+            background: #f0f8f0;
+        }
+
+        .answer-option.selected {
+            border-color: #97bc62;
+            background: #97bc62;
+            color: white;
+        }
+
+        .answer-option.correct {
+            border-color: #28a745;
+            background: #28a745;
+            color: white;
+        }
+
+        .answer-option.incorrect {
+            border-color: #dc3545;
+            background: #dc3545;
+            color: white;
+        }
+
+        .quiz-button {
+            background: #97bc62;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .quiz-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .quiz-button:not(:disabled):hover {
+            background: #7da050;
+            transform: translateY(-2px);
+        }
+
+        .quiz-button.restart {
+            background: #2c5f2d;
+            margin-top: 1rem;
+        }
+
+        .quiz-button.restart:hover {
+            background: #1a3d1c;
+        }
+
+        .quiz-results {
+            text-align: center;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border: 8px solid #97bc62;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #2c5f2d, #97bc62);
+            color: white;
+        }
+
+        .score-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .score-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .result-content h3 {
+            color: #2c5f2d;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .result-content p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .result-tips {
+            background: #f8fffe;
+            border-left: 4px solid #97bc62;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            text-align: left;
+        }
+
+        .result-tips h4 {
+            color: #2c5f2d;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-tips p {
+            margin: 0;
+            color: #555;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1.5rem;
+                margin: 0 1rem;
+            }
+
+            .question {
+                font-size: 1.2rem;
+            }
+
+            .score-circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .score-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>🌱 EcoTransition</h2>
+            </div>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#importance">Importance</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#actions">Actions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content">
+                <div>
+                    <h1>La Transition Énergétique</h1>
+                    <p class="hero-subtitle">L'avenir de notre planète dépend de nos choix énergétiques d'aujourd'hui</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">80%</span>
+                            <span class="stat-label">d'énergies fossiles dans le mix énergétique mondial</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">+1.5°C</span>
+                            <span class="stat-label">objectif de limitation du réchauffement</span>
+                        </div>
+                    </div>
+                    <a href="#importance" class="cta-button">Découvrir pourquoi agir</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="energy-icons">
+                        <div class="icon solar">☀️</div>
+                        <div class="icon wind">💨</div>
+                        <div class="icon leaf">🌿</div>
+                        <div class="icon lightning">⚡</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="importance" class="importance">
+            <div class="container">
+                <h2>Pourquoi la transition énergétique est-elle cruciale ?</h2>
+                <div class="importance-grid">
+                    <div class="importance-card">
+                        <div class="card-icon">🌍</div>
+                        <h3>Climat</h3>
+                        <p>Les combustibles fossiles (charbon, pétrole, gaz) sont responsables de plus de 75% des émissions mondiales de gaz à effet de serre et de près de 90% de toutes les émissions de dioxyde de carbone. (<a href="https://www.un.org/fr/climatechange/what-is-climate-change" target="_blank" rel="noopener noreferrer">Source: ONU</a>)</p>
+                    </div>
+                    <div class="importance-card">
+                        <div class="card-icon">💰</div>
+                        <h3>Économie</h3>
+                        <p>En 2022, 86% de toutes les nouvelles capacités de production d'énergie renouvelable avaient des coûts inférieurs à ceux de l'électricité produite à partir de combustibles fossiles. (<a href="https://www.irena.org/Publications/2023/Aug/Renewable-Power-Generation-Costs-in-2022" target="_blank" rel="noopener noreferrer">Source: IRENA</a>)</p>
+                    </div>
+                    <div class="importance-card">
+                        <div class="card-icon">🏥</div>
+                        <h3>Santé</h3>
+                        <p>La pollution de l'air, principalement due à la combustion d'énergies fossiles, cause environ 7 millions de décès prématurés chaque année dans le monde. (<a href="https://www.who.int/fr/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health" target="_blank" rel="noopener noreferrer">Source: OMS</a>)</p>
+                    </div>
+                    <div class="importance-card">
+                        <div class="card-icon">🔒</div>
+                        <h3>Indépendance</h3>
+                        <p>En 2023, le taux d'indépendance énergétique de la France a atteint un record de 56,3%. Développer les énergies renouvelables sur notre territoire est un gage de souveraineté. (<a href="https://www.statistiques.developpement-durable.gouv.fr/edition-numerique/chiffres-cles-energie-2024/6-bilan-energetique-de-la-france" target="_blank" rel="noopener noreferrer">Source: Ministère de la Transition Écologique</a>)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="solutions">
+            <div class="container">
+                <h2>Les solutions de la transition énergétique</h2>
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <div class="solution-image solar-bg"></div>
+                        <div class="solution-content">
+                            <h3>Énergie Solaire</h3>
+                            <p>Le coût de l'électricité solaire photovoltaïque a chuté de 89 % entre 2010 et 2022. La France vise 100 GW de capacité installée d'ici 2050.</p>
+                            <ul>
+                                <li>Panneau solaire sur votre toit</li>
+                                <li>Autoconsommation énergétique</li>
+                                <li><a href="https://www.service-public.fr/particuliers/vosdroits/F31488" target="_blank" rel="noopener noreferrer">Revente du surplus à un fournisseur</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-image wind-bg"></div>
+                        <div class="solution-content">
+                            <h3>Énergie Éolienne</h3>
+                            <p>Fin 2023, la puissance du parc éolien français atteignait 23,9 GW. L'éolien est la deuxième source d'électricité renouvelable en France.</p>
+                            <ul>
+                                <li>Parcs éoliens terrestres et marins</li>
+                                <li><a href="https://www.ademe.fr/expertises/energies-renouvelables-enr-production-reseaux-stockage/passer-a-laction/produire-lelectricite/eolien/" target="_blank" rel="noopener noreferrer">Découvrir le petit éolien</a></li>
+                                <li>Coopératives citoyennes d'énergie</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="solution-card">
+                        <div class="solution-image efficiency-bg"></div>
+                        <div class="solution-content">
+                            <h3>Efficacité Énergétique</h3>
+                            <p>La rénovation énergétique est un pilier de la transition. Le secteur du bâtiment représente 44% de la consommation d'énergie en France.</p>
+                            <ul>
+                                <li><a href="https://france-renov.gouv.fr/renovation/isolation" target="_blank" rel="noopener noreferrer">Isolation thermique des bâtiments</a></li>
+                                <li>Appareils électroménagers économes (Label énergie)</li>
+                                <li><a href="https://librairie.ademe.fr/urbanisme-et-batiment/5669-vers-des-batiments-responsables-a-l-horizon-2050.html" target="_blank" rel="noopener noreferrer">Optimisation et pilotage énergétique</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz">
+            <div class="container">
+                <h2>Quiz : Testez vos connaissances</h2>
+                <p class="quiz-intro">Mesurez vos connaissances sur la transition énergétique avec ce petit quiz !</p>
+                
+                <div class="quiz-container">
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-text">Question <span id="current-question">1</span> sur <span id="total-questions">5</span></span>
+                    </div>
+
+                    <div class="quiz-content">
+                        <div class="question-container" id="question-container">
+                            <h3 class="question" id="question"></h3>
+                            <div class="answers" id="answers"></div>
+                            <button class="quiz-button" id="next-button" onclick="nextQuestion()" disabled>Suivant</button>
+                        </div>
+
+                        <div class="quiz-results" id="quiz-results" style="display: none;">
+                            <div class="result-content">
+                                <div class="score-circle">
+                                    <span class="score-number" id="final-score">0</span>
+                                    <span class="score-label">/ 5</span>
+                                </div>
+                                <h3 id="result-title"></h3>
+                                <p id="result-message"></p>
+                                <div class="result-tips">
+                                    <h4>💡 Le saviez-vous ?</h4>
+                                    <p id="result-tip"></p>
+                                </div>
+                                <button class="quiz-button restart" onclick="restartQuiz()">Recommencer le quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="actions" class="actions">
+            <div class="container">
+                <h2>Vos actions pour la transition énergétique</h2>
+                <p class="actions-intro">Chaque geste compte ! Voici comment vous pouvez contribuer concrètement :</p>
+                
+                <div class="actions-categories">
+                    <div class="action-category">
+                        <h3>🏠 À la maison</h3>
+                        <div class="action-list">
+                            <div class="action-item">
+                                <input type="checkbox" id="action1">
+                                <label for="action1">Passer à un <a href="https://comparateur.energie-info.fr/" target="_blank" rel="noopener noreferrer">fournisseur d'électricité verte</a></label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action2">
+                                <label for="action2">Installer des panneaux solaires (<a href="https://france-renov.gouv.fr/" target="_blank" rel="noopener noreferrer">France Rénov'</a>)</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action3">
+                                <label for="action3">Améliorer l'isolation de votre logement</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action4">
+                                <label for="action4">Remplacer les ampoules par des LED</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action5">
+                                <label for="action5">Utiliser un thermostat programmable</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-category">
+                        <h3>🚗 Transport</h3>
+                        <div class="action-list">
+                            <div class="action-item">
+                                <input type="checkbox" id="action6">
+                                <label for="action6">Passer à un véhicule électrique</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action7">
+                                <label for="action7">Utiliser les transports en commun</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action8">
+                                <label for="action8">Privilégier le vélo pour les courts trajets</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action9">
+                                <label for="action9">Pratiquer le covoiturage</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-category">
+                        <h3>💡 Consommation</h3>
+                        <div class="action-list">
+                            <div class="action-item">
+                                <input type="checkbox" id="action10">
+                                <label for="action10">Débrancher les appareils en veille</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action11">
+                                <label for="action11">Choisir des appareils classe A+++</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action12">
+                                <label for="action12">Réduire la température de chauffage de 1°C</label>
+                            </div>
+                            <div class="action-item">
+                                <input type="checkbox" id="action13">
+                                <label for="action13">Utiliser l'eau froide pour la lessive</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-calculator">
+                    <h3>Votre impact potentiel</h3>
+                    <p class="impact-disclaimer">Ces chiffres sont des estimations. Calculez votre empreinte carbone complète sur <a href="https://nosgestesclimat.fr/" target="_blank" rel="noopener noreferrer">Nos Gestes Climat</a>.</p>
+                    <div class="impact-stats">
+                        <div class="impact-item">
+                            <span class="impact-number" id="co2-saved">0</span>
+                            <span class="impact-label">kg CO2 économisés/an</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="impact-number" id="money-saved">0</span>
+                            <span class="impact-label">€ économisés/an</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🌱 EcoTransition</h4>
+                    <p>Un projet de sensibilisation pour un avenir énergétique durable. Créé pour illustrer les enjeux et les solutions de la transition écologique.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Ressources Officielles</h4>
+                    <ul>
+                        <li><a href="https://www.ademe.fr/" target="_blank" rel="noopener noreferrer">ADEME</a></li>
+                        <li><a href="https://france-renov.gouv.fr/" target="_blank" rel="noopener noreferrer">France Rénov'</a></li>
+                        <li><a href="https://www.ecologie.gouv.fr/" target="_blank" rel="noopener noreferrer">Ministère de la Transition Écologique</a></li>
+                        <li><a href="https://nosgestesclimat.fr/" target="_blank" rel="noopener noreferrer">Simulateur Nos Gestes Climat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Agences Internationales</h4>
+                    <ul>
+                        <li><a href="https://www.un.org/fr/climatechange" target="_blank" rel="noopener noreferrer">ONU - Action Climat</a></li>
+                        <li><a href="https://www.irena.org" target="_blank" rel="noopener noreferrer">IRENA</a></li>
+                        <li><a href="https://www.who.int/fr" target="_blank" rel="noopener noreferrer">Organisation Mondiale de la Santé</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EcoTransition. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const actionImpacts = {
+                'action1': { co2: 500, money: 120 },
+                'action2': { co2: 2000, money: 800 },
+                'action3': { co2: 1500, money: 400 },
+                'action4': { co2: 80, money: 25 },
+                'action5': { co2: 300, money: 150 },
+                'action6': { co2: 2500, money: 600 },
+                'action7': { co2: 800, money: 200 },
+                'action8': { co2: 400, money: 100 },
+                'action9': { co2: 600, money: 180 },
+                'action10': { co2: 200, money: 50 },
+                'action11': { co2: 300, money: 120 },
+                'action12': { co2: 400, money: 160 },
+                'action13': { co2: 150, money: 40 }
+            };
+
+            const checkboxes = document.querySelectorAll('.action-item input[type="checkbox"]');
+            const co2Element = document.getElementById('co2-saved');
+            const moneyElement = document.getElementById('money-saved');
+
+            function calculateImpact() {
+                let totalCO2 = 0;
+                let totalMoney = 0;
+
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked && actionImpacts[checkbox.id]) {
+                        totalCO2 += actionImpacts[checkbox.id].co2;
+                        totalMoney += actionImpacts[checkbox.id].money;
+                    }
+                });
+
+                animateNumbers(co2Element, totalCO2);
+                animateNumbers(moneyElement, totalMoney);
+            }
+
+            function animateNumbers(element, targetValue) {
+                const startValue = parseInt(element.textContent) || 0;
+                const duration = 1000;
+                const startTime = performance.now();
+
+                function updateNumber(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const currentValue = Math.round(startValue + (targetValue - startValue) * easeOutQuart);
+                    
+                    element.textContent = currentValue.toLocaleString();
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateNumber);
+                    }
+                }
+
+                requestAnimationFrame(updateNumber);
+            }
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', calculateImpact);
+            });
+
+            function smoothScroll() {
+                const links = document.querySelectorAll('nav a[href^="#"]');
+                
+                links.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        const targetSection = document.querySelector(targetId);
+                        
+                        if (targetSection) {
+                            const headerHeight = document.querySelector('header').offsetHeight;
+                            const targetPosition = targetSection.offsetTop - headerHeight;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            function addScrollEffects() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                const animatedElements = document.querySelectorAll('.importance-card, .solution-card, .action-category');
+                
+                animatedElements.forEach(element => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(element);
+                });
+            }
+
+            function addInteractiveElements() {
+                const cards = document.querySelectorAll('.importance-card, .solution-card');
+                
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-10px) scale(1.02)';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+
+                const ctaButtons = document.querySelectorAll('.cta-button');
+                ctaButtons.forEach(button => {
+                    button.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-3px) scale(1.05)';
+                    });
+                    
+                    button.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+            }
+
+            function addProgressBar() {
+                const progressBar = document.createElement('div');
+                progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 4px;
+                    background: linear-gradient(90deg, #97bc62, #2c5f2d);
+                    z-index: 9999;
+                    transition: width 0.3s ease;
+                `;
+                document.body.appendChild(progressBar);
+
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.pageYOffset;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    progressBar.style.width = scrollPercent + '%';
+                });
+            }
+
+            function addCounterAnimation() {
+                const stats = document.querySelectorAll('.stat-number');
+                
+                const observerOptions = {
+                    threshold: 0.5
+                };
+
+                const counterObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                            entry.target.classList.add('animated');
+                            
+                            const finalText = entry.target.textContent;
+                            const isPercentage = finalText.includes('%');
+                            const isTemperature = finalText.includes('°');
+                            
+                            if (isPercentage) {
+                                const number = parseInt(finalText);
+                                animateCounter(entry.target, 0, number, 2000, '%');
+                            } else if (isTemperature) {
+                                entry.target.textContent = '+0°C';
+                                setTimeout(() => {
+                                    entry.target.textContent = finalText;
+                                }, 1000);
+                            }
+                        }
+                    });
+                }, observerOptions);
+
+                stats.forEach(stat => {
+                    counterObserver.observe(stat);
+                });
+            }
+
+            function animateCounter(element, start, end, duration, suffix = '') {
+                const startTime = performance.now();
+                
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                    const currentValue = Math.round(start + (end - start) * easeOutQuart);
+                    
+                    element.textContent = currentValue + suffix;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+            }
+
+            function addMobileMenu() {
+                const nav = document.querySelector('nav ul');
+                const menuToggle = document.createElement('button');
+                menuToggle.innerHTML = '☰';
+                menuToggle.style.cssText = `
+                    display: none;
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                `;
+                
+                document.querySelector('nav').appendChild(menuToggle);
+
+                function toggleMenu() {
+                    nav.classList.toggle('mobile-active');
+                }
+
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+
+            smoothScroll();
+            addScrollEffects();
+            addInteractiveElements();
+            addProgressBar();
+            addCounterAnimation();
+            addMobileMenu();
+            calculateImpact();
+            initQuiz();
+        });
+
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #2c5f2d, #97bc62);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            `;
+            
+            const loader = document.createElement('div');
+            loader.innerHTML = '🌱';
+            loader.style.cssText = `
+                font-size: 4rem;
+                animation: pulse 1.5s ease-in-out infinite;
+            `;
+            
+            loadingOverlay.appendChild(loader);
+            document.body.appendChild(loadingOverlay);
+            
+            setTimeout(() => {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(loadingOverlay);
+                }, 500);
+            }, 1500);
+        });
+
+        // Quiz functionality
+        const quizQuestions = [
+            {
+                question: "D'après l'ONU, quel pourcentage des émissions mondiales de gaz à effet de serre provient des énergies fossiles ?",
+                answers: ["~60%", "~75%", "~80%", "~90%"],
+                correct: 1,
+                explanation: "Les combustibles fossiles sont responsables de plus de 75 % des émissions mondiales de gaz à effet de serre et de près de 90 % de toutes les émissions de dioxyde de carbone."
+            },
+            {
+                question: "Selon l'IRENA, quelle est la source d'énergie renouvelable dont les coûts ont le plus chuté entre 2010 et 2022 ?",
+                answers: ["Éolien terrestre", "Solaire photovoltaïque", "Hydroélectrique", "Éolien en mer"],
+                correct: 1,
+                explanation: "Le coût de l'électricité solaire photovoltaïque a chuté de 89% sur cette période, le rendant extrêmement compétitif."
+            },
+            {
+                question: "Le secteur du bâtiment représente quel pourcentage de la consommation d'énergie en France ?",
+                answers: ["25%", "33%", "44%", "52%"],
+                correct: 2,
+                explanation: "Le bâtiment est le plus gros consommateur d'énergie en France avec 44%, d'où l'importance de l'efficacité énergétique et de la rénovation."
+            },
+            {
+                question: "Quelle action a un impact significatif pour un ménage souhaitant réduire sa facture et ses émissions ?",
+                answers: ["Éteindre les lumières", "Isoler les combles", "Acheter local", "Trier ses déchets"],
+                correct: 1,
+                explanation: "L'isolation des combles peut permettre d'économiser jusqu'à 30% sur la facture de chauffage, l'un des postes les plus énergivores."
+            },
+            {
+                question: "Quel est l'objectif de part d'énergies renouvelables dans la consommation finale brute d'énergie de l'UE pour 2030 ?",
+                answers: ["27%", "32%", "42,5%", "50%"],
+                correct: 2,
+                explanation: "L'Union Européenne a rehaussé son objectif à 42,5% pour 2030, un objectif ambitieux pour accélérer la décarbonation."
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedAnswer = null;
+
+        function initQuiz() {
+            document.getElementById('total-questions').textContent = quizQuestions.length;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestionIndex];
+            document.getElementById('question').textContent = question.question;
+            document.getElementById('current-question').textContent = currentQuestionIndex + 1;
+            
+            const answersContainer = document.getElementById('answers');
+            answersContainer.innerHTML = '';
+            
+            question.answers.forEach((answer, index) => {
+                const answerDiv = document.createElement('div');
+                answerDiv.className = 'answer-option';
+                answerDiv.textContent = answer;
+                answerDiv.onclick = () => selectAnswer(index, answerDiv);
+                answersContainer.appendChild(answerDiv);
+            });
+
+            updateProgressBar();
+            selectedAnswer = null;
+            document.getElementById('next-button').disabled = true;
+        }
+
+        function selectAnswer(answerIndex, answerElement) {
+            // Remove previous selection
+            document.querySelectorAll('.answer-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Select current answer
+            answerElement.classList.add('selected');
+            selectedAnswer = answerIndex;
+            document.getElementById('next-button').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (selectedAnswer === null) return;
+
+            const question = quizQuestions[currentQuestionIndex];
+            const isCorrect = selectedAnswer === question.correct;
+            
+            if (isCorrect) {
+                score++;
+            }
+
+            // Show correct/incorrect answers
+            const answerOptions = document.querySelectorAll('.answer-option');
+            answerOptions.forEach((option, index) => {
+                option.onclick = null; // Disable clicking
+                if (index === question.correct) {
+                    option.classList.add('correct');
+                } else if (index === selectedAnswer && !isCorrect) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            // Wait a moment to show the result, then move to next question
+            setTimeout(() => {
+                currentQuestionIndex++;
+                
+                if (currentQuestionIndex < quizQuestions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1500);
+
+            document.getElementById('next-button').disabled = true;
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+        }
+
+        function showResults() {
+            document.getElementById('question-container').style.display = 'none';
+            document.getElementById('quiz-results').style.display = 'block';
+
+            // Animate score
+            const scoreElement = document.getElementById('final-score');
+            let currentScore = 0;
+            const scoreInterval = setInterval(() => {
+                scoreElement.textContent = currentScore;
+                currentScore++;
+                if (currentScore > score) {
+                    clearInterval(scoreInterval);
+                }
+            }, 200);
+
+            // Set result message based on score
+            const resultTitle = document.getElementById('result-title');
+            const resultMessage = document.getElementById('result-message');
+            const resultTip = document.getElementById('result-tip');
+
+            if (score === 5) {
+                resultTitle.textContent = "🏆 Excellent !";
+                resultMessage.textContent = "Vous maîtrisez parfaitement les enjeux de la transition énergétique !";
+                resultTip.textContent = "Partagez ce site pour sensibiliser votre entourage et continuez à suivre l'actualité sur des sites comme celui de l'ADEME.";
+            } else if (score >= 3) {
+                resultTitle.textContent = "👍 Très bien !";
+                resultMessage.textContent = "Vous avez de bonnes connaissances sur la transition énergétique.";
+                resultTip.textContent = "Approfondissez certains sujets en consultant les guides de France Rénov' pour des actions concrètes à la maison.";
+            } else if (score >= 2) {
+                resultTitle.textContent = "📚 Pas mal !";
+                resultMessage.textContent = "Vous avez des bases solides, mais vous pouvez encore progresser.";
+                resultTip.textContent = "Explorez les liens dans notre section 'Solutions' pour découvrir le potentiel de chaque énergie renouvelable.";
+            } else {
+                resultTitle.textContent = "🌱 À améliorer";
+                resultMessage.textContent = "C'est un bon début ! Il y a encore beaucoup à apprendre.";
+                resultTip.textContent = "Utilisez le simulateur Nos Gestes Climat pour comprendre votre propre impact et comment le réduire efficacement.";
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedAnswer = null;
+            
+            document.getElementById('question-container').style.display = 'block';
+            document.getElementById('quiz-results').style.display = 'none';
+            
+            showQuestion();
+        }
+    </script>
+</body>
+</html> 
